@@ -7,7 +7,7 @@ data <- read_delim("household_power_consumption.txt", delim = ";", na = c("?"))
 png(file = "plot2.png")
 
 data <- data %>%
-        filter(Date %in% c("1/1/2007", "2/1/2007")) %>%
+        filter(Date %in% c("1/2/2007", "2/2/2007")) %>%
         mutate(Date = paste(Date, Time, sep = "-")) %>%
         mutate(Date = as_datetime(strptime(Date, format = "%d/%m/%Y-%H:%M:%S")))
 

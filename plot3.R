@@ -7,15 +7,14 @@ data <- read_delim("household_power_consumption.txt", delim = ";", na = c("?"))
 png(file = "plot3.png")
 
 data <- data %>%
-        filter(Date %in% c("1/1/2007", "2/1/2007")) %>%
+        filter(Date %in% c("1/2/2007", "2/2/2007")) %>%
         mutate(Date = paste(Date, Time, sep = "-")) %>%
         mutate(Date = as_datetime(strptime(Date, format = "%d/%m/%Y-%H:%M:%S")))
 
-with(data, plot(Date, Sub_metering_3, 
+with(data, plot(Date, Sub_metering_1, 
                 type = "n", 
                 xlab = "",
-                ylab = "Energy sub meetering",
-                ylim = c(0,30)))
+                ylab = "Energy sub meetering"))
 with(data, lines(Date, Sub_metering_3, col = "blue"))
 with(data, lines(Date, Sub_metering_2, col = "red"))
 with(data, lines(Date, Sub_metering_1, col = "black"))
@@ -25,3 +24,4 @@ legend("topright",
        lwd = c(2, 2, 2))
 
 dev.off()
+
