@@ -1,3 +1,7 @@
+# Plotting Assignment
+
+This repo contains several plots i made as part of an assignment for the John Hopkins University Data Science Specialization on Coursera.
+
 ## Introduction
 
 This assignment uses data from
